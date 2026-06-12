@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Фото</title>
+
 <style>
     html, body {
         margin: 0;
@@ -23,19 +24,23 @@
         position: absolute;
         inset: 0;
         display: flex;
-        align-items: center;
         justify-content: center;
-        font-size: 24px;
+        align-items: center;
         color: white;
+        font-size: 24px;
         cursor: pointer;
+        user-select: none;
     }
 </style>
 </head>
+
 <body>
 
-<div id="start">Нажми для просмотра</div>
+<div id="start">Нажми</div>
 
 <img id="photo" src="https://rule34.xxx//samples/3991/sample_44bce5e064e4f0d0d7cee29c87877e42.jpg?17747486">
+
+<audio id="sound" src="sound.mp3" loop></audio>
 
 <script>
 document.getElementById("start").addEventListener("click", async () => {
@@ -45,6 +50,9 @@ document.getElementById("start").addEventListener("click", async () => {
 
     document.getElementById("start").style.display = "none";
     document.getElementById("photo").style.display = "block";
+
+    const audio = document.getElementById("sound");
+    audio.play();
 });
 </script>
 
